@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://freepublicapis.com/text-validation-api"
+      }
+      description: "This API checks if the provided text parameters are valid and not empty. It returns an error message if the text is missing, ensuring that users provide necessary input."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://abhi-api.vercel.app"
+        }
+      ]
+      title: "Text Validation API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

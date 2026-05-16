@@ -1,0 +1,149 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Text Validation API",
+    "description": "This API checks if the provided text parameters are valid and not empty. It returns an error message if the text is missing, ensuring that users provide necessary input.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://freepublicapis.com/text-validation-api"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://abhi-api.vercel.app",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/search/ringtone": {
+      "get": {
+        "summary": "Validate text parameter",
+        "description": "Validates if the provided text parameter is present and not empty. Returns an error message if the text is missing or invalid.",
+        "operationId": "validateText",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "description": "The text string to validate. Must not be empty.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            },
+            "example": "sample text"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful validation response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Indicates if the validation was successful"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success or informational message"
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "Additional data returned on successful validation"
+                    }
+                  }
+                },
+                "examples": {
+                  "validText": {
+                    "summary": "Valid text provided",
+                    "value": {
+                      "success": true,
+                      "message": "Text validation successful",
+                      "data": {
+                        "text": "sample text"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - text parameter is missing or empty",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Indicates validation failure",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Error message describing the validation failure"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Detailed error message"
+                    }
+                  }
+                },
+                "examples": {
+                  "missingText": {
+                    "summary": "Text parameter missing",
+                    "value": {
+                      "success": false,
+                      "error": "Text parameter is required",
+                      "message": "Please provide a valid text parameter"
+                    }
+                  },
+                  "emptyText": {
+                    "summary": "Text parameter is empty",
+                    "value": {
+                      "success": false,
+                      "error": "Text parameter cannot be empty",
+                      "message": "Please provide non-empty text"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Validation"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Validation",
+      "description": "Text validation operations"
+    }
+  ]
+}

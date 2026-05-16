@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "validation": {
+      "VALIDATION00": {
+        "data": {},
+        "message": "s1f",
+        "success": true
+      },
+      "VALIDATION01": {
+        "data": {},
+        "message": "s3d",
+        "success": true
+      },
+      "VALIDATION02": {
+        "data": {},
+        "message": "s5b",
+        "success": true
+      }
+    }
+  },
+  "new": {
+    "validation": {
+      "validation_ref01": {
+        "data": {},
+        "message": "s79",
+        "success": true
+      }
+    }
+  }
+}
