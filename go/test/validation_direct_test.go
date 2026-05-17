@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/text-validation-sdk"
-	"github.com/voxgig-sdk/text-validation-sdk/core"
+	sdk "github.com/voxgig-sdk/text-validation-sdk/go"
+	"github.com/voxgig-sdk/text-validation-sdk/go/core"
 )
 
 func TestValidationDirect(t *testing.T) {

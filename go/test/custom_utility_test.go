@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/text-validation-sdk"
+	sdk "github.com/voxgig-sdk/text-validation-sdk/go"
 )
 
 func TestCustomUtility(t *testing.T) {

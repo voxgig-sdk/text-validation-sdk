@@ -1,10 +1,10 @@
 package voxgigtextvalidationsdk
 
 import (
-	"github.com/voxgig-sdk/text-validation-sdk/core"
-	"github.com/voxgig-sdk/text-validation-sdk/entity"
-	"github.com/voxgig-sdk/text-validation-sdk/feature"
-	_ "github.com/voxgig-sdk/text-validation-sdk/utility"
+	"github.com/voxgig-sdk/text-validation-sdk/go/core"
+	"github.com/voxgig-sdk/text-validation-sdk/go/entity"
+	"github.com/voxgig-sdk/text-validation-sdk/go/feature"
+	_ "github.com/voxgig-sdk/text-validation-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

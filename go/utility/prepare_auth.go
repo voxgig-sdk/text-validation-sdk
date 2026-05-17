@@ -1,9 +1,9 @@
 package utility
 
 import (
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/text-validation-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/text-validation-sdk/core"
+	"github.com/voxgig-sdk/text-validation-sdk/go/core"
 )
 
 const headerAuth = "authorization"

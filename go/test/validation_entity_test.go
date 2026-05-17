@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/text-validation-sdk"
-	"github.com/voxgig-sdk/text-validation-sdk/core"
+	sdk "github.com/voxgig-sdk/text-validation-sdk/go"
+	"github.com/voxgig-sdk/text-validation-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/text-validation-sdk/go/utility/struct"
 )
 
 func TestValidationEntity(t *testing.T) {
