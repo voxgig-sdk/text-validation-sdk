@@ -85,7 +85,6 @@ function validation_basic_setup($extra)
         "TEXTVALIDATION_TEST_VALIDATION_ENTID" => $idmap,
         "TEXTVALIDATION_TEST_LIVE" => "FALSE",
         "TEXTVALIDATION_TEST_EXPLAIN" => "FALSE",
-        "TEXTVALIDATION_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +96,6 @@ function validation_basic_setup($extra)
     if ($env["TEXTVALIDATION_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["TEXTVALIDATION_APIKEY"],
             ],
             $extra ?? [],
         ]);

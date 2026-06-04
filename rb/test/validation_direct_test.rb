@@ -67,14 +67,12 @@ def validation_direct_setup(mockres)
   env = Runner.env_override({
     "TEXTVALIDATION_TEST_VALIDATION_ENTID" => {},
     "TEXTVALIDATION_TEST_LIVE" => "FALSE",
-    "TEXTVALIDATION_APIKEY" => "NONE",
   })
 
   live = env["TEXTVALIDATION_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["TEXTVALIDATION_APIKEY"],
     }
     client = TextValidationSDK.new(merged_opts)
     return {

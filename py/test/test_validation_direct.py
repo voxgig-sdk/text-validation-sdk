@@ -64,14 +64,12 @@ def _validation_direct_setup(mockres):
     env = runner.env_override({
         "TEXTVALIDATION_TEST_VALIDATION_ENTID": {},
         "TEXTVALIDATION_TEST_LIVE": "FALSE",
-        "TEXTVALIDATION_APIKEY": "NONE",
     })
 
     live = env.get("TEXTVALIDATION_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("TEXTVALIDATION_APIKEY"),
         }
         client = TextValidationSDK(merged_opts)
         return {

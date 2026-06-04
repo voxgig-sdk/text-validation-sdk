@@ -17,9 +17,7 @@ loading a specific record.
 ```ts
 import { TextValidationSDK } from 'text-validation'
 
-const client = new TextValidationSDK({
-  apikey: process.env.TEXT-VALIDATION_APIKEY,
-})
+const client = new TextValidationSDK({})
 ```
 
 ### 3. Load a validation
@@ -82,7 +80,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new TextValidationSDK({ apikey: '...' })
+const client = new TextValidationSDK()
 const testClient = client.tester()
 ```
 
@@ -118,7 +116,6 @@ const logger = {
 }
 
 const client = new TextValidationSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -129,7 +126,6 @@ Create a `.env.local` file at the project root:
 
 ```
 TEXT-VALIDATION_TEST_LIVE=TRUE
-TEXT-VALIDATION_APIKEY=<your-key>
 ```
 
 Then run:
@@ -147,7 +143,6 @@ cd ts && npm test
 
 ```ts
 new TextValidationSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -158,7 +153,6 @@ new TextValidationSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
