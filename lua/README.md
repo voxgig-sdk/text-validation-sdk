@@ -10,7 +10,7 @@ The Lua SDK for the TextValidation API — an entity-oriented client using Lua c
 
 ## Install
 ```bash
-luarocks install text-validation-sdk
+luarocks install voxgig-sdk-text-validation
 ```
 
 If the module is not yet published, add the source directory to

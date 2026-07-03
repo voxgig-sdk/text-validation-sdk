@@ -10,13 +10,13 @@ The Ruby SDK for the TextValidation API — an entity-oriented client using idio
 
 ## Install
 ```bash
-gem install text-validation-sdk
+gem install voxgig-sdk-text-validation
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "text-validation-sdk"
+gem "voxgig-sdk-text-validation"
 ```
 
 Then run:

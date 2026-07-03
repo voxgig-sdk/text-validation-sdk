@@ -10,7 +10,7 @@ The TypeScript SDK for the TextValidation API — a type-safe, entity-oriented c
 
 ## Install
 ```bash
-npm install text-validation
+npm install @voxgig-sdk/text-validation
 ```
 ## Tutorial: your first API call
 

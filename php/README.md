@@ -10,7 +10,7 @@ The PHP SDK for the TextValidation API — an entity-oriented client using PHP c
 
 ## Install
 ```bash
-composer require voxgig/text-validation-sdk
+composer require voxgig-sdk/text-validation
 ```
 
 

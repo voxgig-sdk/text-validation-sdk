@@ -10,7 +10,7 @@ The Python SDK for the TextValidation API — an entity-oriented client followin
 
 ## Install
 ```bash
-pip install text-validation-sdk
+pip install voxgig-sdk-text-validation
 ```
 
 Or install from source:
