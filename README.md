@@ -1,24 +1,8 @@
 # TextValidation SDK
 
-Check whether a text query parameter is present, using a tiny endpoint from the Abhi-API collection
+Text Validation API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Text Validation API
-
-Text Validation API is a single endpoint from the broader [Abhi-API](https://abhi-api.vercel.app) collection of free public APIs maintained by Abhishek Suresh. The Abhi-API project bundles many small utility endpoints (translation, text-to-speech, image generators, etc.) under one Vercel-hosted host, and this SDK exposes only the text-validation slice.
-
-What you get from the API:
-
-- A single GET endpoint that accepts a `text` query parameter and returns an error message when the parameter is missing or empty.
-- Useful as a minimal example of input-validation behaviour, or as a smoke-test target.
-
-Operational notes:
-
-- Server: `https://abhi-api.vercel.app`.
-- No authentication is documented.
-- CORS is reported as disabled on the freepublicapis.com catalogue listing, so browser-side calls from other origins may be blocked.
-- No rate limits are published; the catalogue lists the endpoint as healthy and frequently checked.
 
 ## Try it
 
@@ -52,27 +36,31 @@ gem install text-validation-sdk
 luarocks install text-validation-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { TextValidationSDK } from 'text-validation'
 
-const client = new TextValidationSDK({})
+const client = new TextValidationSDK({
+  apikey: process.env.TEXT-VALIDATION_APIKEY,
+})
 
+// Load validation data
+const validation = await client.Validation().load({})
+console.log(validation.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -102,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Validation** | Text-presence validation calls against the Abhi-API host; the catalogued endpoint is `GET /api/search/ringtone?text=` which returns an error when the `text` parameter is absent or empty. | `/api/search/ringtone` |
+| **Validation** |  | `/api/search/ringtone` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -112,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from textvalidation_sdk import TextValidationSDK
 
-client = TextValidationSDK({})
+client = TextValidationSDK({
+    "apikey": os.environ.get("TEXT-VALIDATION_APIKEY"),
+})
 
 
 # Load a specific validation
-validation, err = client.Validation(None).load(
-    {"id": "example_id"}, None
-)
+validation, err = client.Validation().load({"id": "example_id"})
+print(validation)
 ```
 
 ### PHP
@@ -129,13 +119,14 @@ validation, err = client.Validation(None).load(
 <?php
 require_once 'textvalidation_sdk.php';
 
-$client = new TextValidationSDK([]);
+$client = new TextValidationSDK([
+    "apikey" => getenv("TEXT-VALIDATION_APIKEY"),
+]);
 
 
 // Load a specific validation
-[$validation, $err] = $client->Validation(null)->load(
-    ["id" => "example_id"], null
-);
+[$validation, $err] = $client->Validation()->load(["id" => "example_id"]);
+print_r($validation);
 ```
 
 ### Golang
@@ -143,8 +134,13 @@ $client = new TextValidationSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/text-validation-sdk/go"
 
-client := sdk.NewTextValidationSDK(map[string]any{})
+client := sdk.NewTextValidationSDK(map[string]any{
+    "apikey": os.Getenv("TEXT-VALIDATION_APIKEY"),
+})
 
+// Load validation data
+validation, err := client.Validation(nil).Load(map[string]any{}, nil)
+fmt.Println(validation)
 ```
 
 ### Ruby
@@ -152,13 +148,14 @@ client := sdk.NewTextValidationSDK(map[string]any{})
 ```ruby
 require_relative "TextValidation_sdk"
 
-client = TextValidationSDK.new({})
+client = TextValidationSDK.new({
+  "apikey" => ENV["TEXT-VALIDATION_APIKEY"],
+})
 
 
 # Load a specific validation
-validation, err = client.Validation(nil).load(
-  { "id" => "example_id" }, nil
-)
+validation, err = client.Validation().load({ "id" => "example_id" })
+puts validation
 ```
 
 ### Lua
@@ -166,13 +163,14 @@ validation, err = client.Validation(nil).load(
 ```lua
 local sdk = require("text-validation_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("TEXT-VALIDATION_APIKEY"),
+})
 
 
 -- Load a specific validation
-local validation, err = client:Validation(nil):load(
-  { id = "example_id" }, nil
-)
+local validation, err = client:Validation():load({ id = "example_id" })
+print(validation)
 ```
 
 ## Unit testing in offline mode
@@ -191,25 +189,21 @@ const result = await client.Validation().load({ id: 'test01' })
 ### Python
 
 ```python
-client = TextValidationSDK.test(None, None)
-result, err = client.Validation(None).load(
-    {"id": "test01"}, None
-)
+client = TextValidationSDK.test()
+result, err = client.Validation().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = TextValidationSDK::test(null, null);
-[$result, $err] = $client->Validation(null)->load(
-    ["id" => "test01"], null
-);
+$client = TextValidationSDK::test();
+[$result, $err] = $client->Validation()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Validation(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -218,19 +212,15 @@ result, err := client.Validation(nil).Load(
 ### Ruby
 
 ```ruby
-client = TextValidationSDK.test(nil, nil)
-result, err = client.Validation(nil).load(
-  { "id" => "test01" }, nil
-)
+client = TextValidationSDK.test
+result, err = client.Validation().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Validation(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Validation():load({ id = "test01" })
 ```
 
 ## How it works
@@ -334,16 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Text Validation API
-
-- Upstream: [https://abhi-api.vercel.app](https://abhi-api.vercel.app)
-- API docs: [https://freepublicapis.com/text-validation-api](https://freepublicapis.com/text-validation-api)
-
-- No licence is published on the API homepage or the freepublicapis.com catalogue page.
-- The service is a personal/hobby project by Abhishek Suresh ([AbhishekSuresh2](https://github.com/AbhishekSuresh2)); contact the author before relying on it.
-- No terms of service, attribution, or rate-limit policy are documented.
-- Treat availability as best-effort: the endpoint runs on Vercel and may change or disappear without notice.
 
 ---
 

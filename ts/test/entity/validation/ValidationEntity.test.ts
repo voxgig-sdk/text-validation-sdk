@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'TEXT_VALIDATION_TEST_VALIDATION_ENTID': idmap,
     'TEXT_VALIDATION_TEST_LIVE': 'FALSE',
     'TEXT_VALIDATION_TEST_EXPLAIN': 'FALSE',
+    'TEXT_VALIDATION_APIKEY': 'NONE',
   })
 
   idmap = env['TEXT_VALIDATION_TEST_VALIDATION_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new TextValidationSDK(merge([
       {
+        apikey: env.TEXT_VALIDATION_APIKEY,
       },
       extra
     ]))

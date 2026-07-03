@@ -68,12 +68,14 @@ function validation_direct_setup(mockres)
   local env = runner.env_override({
     ["TEXTVALIDATION_TEST_VALIDATION_ENTID"] = {},
     ["TEXTVALIDATION_TEST_LIVE"] = "FALSE",
+    ["TEXTVALIDATION_APIKEY"] = "NONE",
   })
 
   local live = env["TEXTVALIDATION_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["TEXTVALIDATION_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

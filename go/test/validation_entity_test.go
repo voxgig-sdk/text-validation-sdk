@@ -117,6 +117,7 @@ func validationBasicSetup(extra map[string]any) *entityTestSetup {
 		"TEXTVALIDATION_TEST_VALIDATION_ENTID": idmap,
 		"TEXTVALIDATION_TEST_LIVE":      "FALSE",
 		"TEXTVALIDATION_TEST_EXPLAIN":   "FALSE",
+		"TEXTVALIDATION_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["TEXTVALIDATION_TEST_VALIDATION_ENTID"])
@@ -127,6 +128,7 @@ func validationBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["TEXTVALIDATION_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["TEXTVALIDATION_APIKEY"],
 			},
 			extra,
 		})

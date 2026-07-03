@@ -91,6 +91,7 @@ def _validation_basic_setup(extra):
         "TEXTVALIDATION_TEST_VALIDATION_ENTID": idmap,
         "TEXTVALIDATION_TEST_LIVE": "FALSE",
         "TEXTVALIDATION_TEST_EXPLAIN": "FALSE",
+        "TEXTVALIDATION_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -101,6 +102,7 @@ def _validation_basic_setup(extra):
     if env.get("TEXTVALIDATION_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("TEXTVALIDATION_APIKEY"),
             },
             extra or {},
         ])

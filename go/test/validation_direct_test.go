@@ -105,12 +105,14 @@ func validationDirectSetup(mockres any) *validationDirectSetupResult {
 	env := envOverride(map[string]any{
 		"TEXTVALIDATION_TEST_VALIDATION_ENTID": map[string]any{},
 		"TEXTVALIDATION_TEST_LIVE":    "FALSE",
+		"TEXTVALIDATION_APIKEY":       "NONE",
 	})
 
 	live := env["TEXTVALIDATION_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["TEXTVALIDATION_APIKEY"],
 		}
 		client := sdk.NewTextValidationSDK(mergedOpts)
 

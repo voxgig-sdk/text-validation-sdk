@@ -15,6 +15,9 @@ module TextValidationConfig
       },
       "options" => {
         "base" => "https://abhi-api.vercel.app",
+        "auth" => {
+          "prefix" => "Bearer",
+        },
         "headers" => {
           "content-type" => "application/json",
         },
@@ -26,43 +29,45 @@ module TextValidationConfig
         "validation" => {
           "fields" => [
             {
+              "active" => true,
               "name" => "data",
               "req" => false,
               "type" => "`$OBJECT`",
-              "active" => true,
               "index$" => 0,
             },
             {
+              "active" => true,
               "name" => "message",
               "req" => false,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 1,
             },
             {
+              "active" => true,
               "name" => "success",
               "req" => false,
               "type" => "`$BOOLEAN`",
-              "active" => true,
               "index$" => 2,
             },
           ],
           "name" => "validation",
           "op" => {
             "load" => {
+              "input" => "data",
               "name" => "load",
               "points" => [
                 {
+                  "active" => true,
                   "args" => {
                     "query" => [
                       {
+                        "active" => true,
                         "example" => "sample text",
                         "kind" => "query",
                         "name" => "text",
                         "orig" => "text",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -82,11 +87,9 @@ module TextValidationConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 0,
                 },
               ],
-              "input" => "data",
               "key$" => "load",
             },
           },

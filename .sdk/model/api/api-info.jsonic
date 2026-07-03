@@ -16,31 +16,7 @@ main: {
       ]
       title: "Text Validation API"
       version: "1.0.0"
-      tagline: "Check whether a text query parameter is present, using a tiny endpoint from the Abhi-API collection"
-      homepage: "https://abhi-api.vercel.app"
-      docs_url: "https://freepublicapis.com/text-validation-api"
-      license_short: "No licence stated; treat as an unlicensed hobby endpoint."
-      license_md: `- No licence is published on the API homepage or the freepublicapis.com catalogue page.
-- The service is a personal/hobby project by Abhishek Suresh ([AbhishekSuresh2](https://github.com/AbhishekSuresh2)); contact the author before relying on it.
-- No terms of service, attribution, or rate-limit policy are documented.
-- Treat availability as best-effort: the endpoint runs on Vercel and may change or disappear without notice.`
-      about_md: `Text Validation API is a single endpoint from the broader [Abhi-API](https://abhi-api.vercel.app) collection of free public APIs maintained by Abhishek Suresh. The Abhi-API project bundles many small utility endpoints (translation, text-to-speech, image generators, etc.) under one Vercel-hosted host, and this SDK exposes only the text-validation slice.
-
-What you get from the API:
-
-- A single GET endpoint that accepts a \`text\` query parameter and returns an error message when the parameter is missing or empty.
-- Useful as a minimal example of input-validation behaviour, or as a smoke-test target.
-
-Operational notes:
-
-- Server: \`https://abhi-api.vercel.app\`.
-- No authentication is documented.
-- CORS is reported as disabled on the freepublicapis.com catalogue listing, so browser-side calls from other origins may be blocked.
-- No rate limits are published; the catalogue lists the endpoint as healthy and frequently checked.`
-      entity_desc: {
-        validation: "Text-presence validation calls against the Abhi-API host; the catalogued endpoint is `GET /api/search/ringtone?text=` which returns an error when the `text` parameter is absent or empty."
-      }
-      auth: false
     }
   }
 }
+
