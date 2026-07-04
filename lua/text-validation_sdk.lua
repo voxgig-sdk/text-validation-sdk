@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:validation():list() / client:validation():load({ id = ... })
-function TextValidationSDK:validation(data)
+-- Idiomatic facade: client:Validation():list() / client:Validation():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function TextValidationSDK:Validation(data)
   local EntityMod = require("entity.validation_entity")
   if data == nil then
     if self._validation == nil then
@@ -253,12 +254,6 @@ function TextValidationSDK:validation(data)
     end
     return self._validation
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:validation() instead.
-function TextValidationSDK:Validation(data)
-  local EntityMod = require("entity.validation_entity")
   return EntityMod.new(self, data)
 end
 

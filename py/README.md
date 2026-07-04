@@ -33,10 +33,12 @@ client = TextValidationSDK()
 
 ### 3. Load a validation
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.validation.load({"id": "example_id"})
-    print(result)
+    validation = client.Validation().load({"id": "example_id"})
+    print(validation)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = TextValidationSDK.test()
 
-result = client.validation.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+validation = client.Validation().load({"id": "test01"})
+# validation contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -220,7 +223,7 @@ API path: `/api/search/ringtone`
 
 ### Validation
 
-Create an instance: `const validation = client.validation`
+Create an instance: `validation = client.Validation()`
 
 #### Operations
 
@@ -238,8 +241,8 @@ Create an instance: `const validation = client.validation`
 
 #### Example: Load
 
-```ts
-const validation = await client.validation.load({ id: 'validation_id' })
+```python
+validation = client.Validation().load({"id": "validation_id"})
 ```
 
 
@@ -313,7 +316,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-validation = client.validation
+validation = client.Validation()
 validation.load({"id": "example_id"})
 
 # validation.data_get() now returns the loaded validation data
