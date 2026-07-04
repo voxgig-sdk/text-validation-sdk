@@ -245,6 +245,9 @@ func (sdk *TextValidationSDK) Direct(fetchargs map[string]any) (map[string]any, 
 }
 
 
+// Validation returns a Validation entity bound to this client.
+// Idiomatic usage: client.Validation(nil).List(nil, nil) or
+// client.Validation(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *TextValidationSDK) Validation(data map[string]any) TextValidationEntity {
 	return NewValidationEntityFunc(sdk, data)
 }

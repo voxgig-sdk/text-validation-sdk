@@ -78,14 +78,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'TEXTVALIDATION_TEST_VALIDATION_ENTID': {},
     'TEXTVALIDATION_TEST_LIVE': 'FALSE',
-    'TEXTVALIDATION_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.TEXTVALIDATION_TEST_LIVE
 
   if (live) {
     const client = new TextValidationSDK({
-      apikey: env.TEXTVALIDATION_APIKEY,
     })
 
     let idmap: any = env['TEXTVALIDATION_TEST_VALIDATION_ENTID']

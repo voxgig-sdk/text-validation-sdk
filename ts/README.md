@@ -9,9 +9,12 @@ The TypeScript SDK for the TextValidation API — a type-safe, entity-oriented c
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/text-validation
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/text-validation-sdk/releases](https://github.com/voxgig-sdk/text-validation-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { TextValidationSDK } from 'text-validation'
+import { TextValidationSDK } from '@voxgig-sdk/text-validation'
 
-const client = new TextValidationSDK({
-  apikey: process.env.TEXT-VALIDATION_APIKEY,
-})
+const client = new TextValidationSDK()
 ```
 
 ### 3. Load a validation
 
 ```ts
-const result = await client.Validation().load({ id: 'example_id' })
+const result = await client.validation.load({ id: 'example_id' })
 
 if (result.ok) {
   console.log(result.data)
@@ -79,7 +80,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = TextValidationSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.validation.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -87,7 +88,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new TextValidationSDK({ apikey: '...' })
+const client = new TextValidationSDK()
 const testClient = client.tester()
 ```
 
@@ -96,7 +97,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.validation
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -123,7 +124,6 @@ const logger = {
 }
 
 const client = new TextValidationSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -133,8 +133,7 @@ const client = new TextValidationSDK({
 Create a `.env.local` file at the project root:
 
 ```
-TEXT-VALIDATION_TEST_LIVE=TRUE
-TEXT-VALIDATION_APIKEY=<your-key>
+TEXT_VALIDATION_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -152,7 +151,6 @@ cd ts && npm test
 
 ```ts
 new TextValidationSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -163,7 +161,6 @@ new TextValidationSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -268,7 +265,7 @@ API path: `/api/search/ringtone`
 
 ### Validation
 
-Create an instance: `const validation = client.Validation()`
+Create an instance: `const validation = client.validation`
 
 #### Operations
 
@@ -287,7 +284,7 @@ Create an instance: `const validation = client.Validation()`
 #### Example: Load
 
 ```ts
-const validation = await client.Validation().load({ id: 'validation_id' })
+const validation = await client.validation.load({ id: 'validation_id' })
 ```
 
 
@@ -348,7 +345,7 @@ text-validation/
 Import the SDK from the package root:
 
 ```ts
-import { TextValidationSDK } from 'text-validation'
+import { TextValidationSDK } from '@voxgig-sdk/text-validation'
 ```
 
 ### Entity state
@@ -358,11 +355,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const validation = client.validation
+await validation.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// validation.data() now returns the loaded validation data
+// validation.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration
