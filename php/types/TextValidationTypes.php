@@ -20,7 +20,7 @@ class Validation
     public ?bool $success = null;
 }
 
-/** Match filter for Validation#load (any subset of Validation fields). */
+/** Request payload for Validation#load. */
 class ValidationLoadMatch
 {
     public ?array $data = null;

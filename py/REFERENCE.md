@@ -8,7 +8,7 @@ Complete API reference for the TextValidation Python SDK.
 ### Constructor
 
 ```python
-from text-validation_sdk import TextValidationSDK
+from textvalidation_sdk import TextValidationSDK
 
 client = TextValidationSDK(options)
 ```
@@ -87,9 +87,9 @@ validation = client.Validation()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `message` | ``$STRING`` | No |  |
-| `success` | ``$BOOLEAN`` | No |  |
+| `data` | `dict` | No |  |
+| `message` | `str` | No |  |
+| `success` | `bool` | No |  |
 
 ### Operations
 
@@ -98,7 +98,7 @@ validation = client.Validation()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Validation().load({"id": "validation_id"})
+result = client.Validation().load()
 ```
 
 ### Common Methods

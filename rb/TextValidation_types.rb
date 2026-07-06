@@ -25,7 +25,7 @@ Validation = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Validation#load (any subset of Validation fields).
+# Request payload for Validation#load.
 #
 # @!attribute [rw] data
 #   @return [Hash, nil]

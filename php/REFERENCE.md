@@ -8,7 +8,7 @@ Complete API reference for the TextValidation PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/text-validation_sdk.php';
+require_once __DIR__ . '/textvalidation_sdk.php';
 
 $client = new TextValidationSDK($options);
 ```
@@ -45,11 +45,11 @@ $client = TextValidationSDK::test();
 
 Create a new `ValidationEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): TextValidationUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,9 +92,9 @@ $validation = $client->Validation();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `message` | ``$STRING`` | No |  |
-| `success` | ``$BOOLEAN`` | No |  |
+| `data` | `array` | No |  |
+| `message` | `string` | No |  |
+| `success` | `bool` | No |  |
 
 ### Operations
 
@@ -103,24 +103,24 @@ $validation = $client->Validation();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Validation()->load(["id" => "validation_id"]);
+$result = $client->Validation()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -129,7 +129,7 @@ Set the entity match criteria.
 Create a new `ValidationEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

@@ -15,8 +15,7 @@ type Validation struct {
 	Success *bool `json:"success,omitempty"`
 }
 
-// ValidationLoadMatch mirrors the validation fields as an all-optional match
-// filter (Go analog of Partial<Validation>).
+// ValidationLoadMatch is the typed request payload for Validation.LoadTyped.
 type ValidationLoadMatch struct {
 	Data *map[string]any `json:"data,omitempty"`
 	Message *string `json:"message,omitempty"`

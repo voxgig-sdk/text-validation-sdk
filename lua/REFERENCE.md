@@ -90,9 +90,9 @@ local validation = client:Validation(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `message` | ``$STRING`` | No |  |
-| `success` | ``$BOOLEAN`` | No |  |
+| `data` | `table` | No |  |
+| `message` | `string` | No |  |
+| `success` | `boolean` | No |  |
 
 ### Operations
 
@@ -101,7 +101,7 @@ local validation = client:Validation(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Validation():load({ id = "validation_id" })
+local result, err = client:Validation():load()
 ```
 
 ### Common Methods

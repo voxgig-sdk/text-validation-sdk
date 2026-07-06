@@ -97,9 +97,9 @@ validation := client.Validation(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `message` | ``$STRING`` | No |  |
-| `success` | ``$BOOLEAN`` | No |  |
+| `data` | `map[string]any` | No |  |
+| `message` | `string` | No |  |
+| `success` | `bool` | No |  |
 
 ### Operations
 
@@ -108,7 +108,7 @@ validation := client.Validation(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Validation(nil).Load(map[string]any{"id": "validation_id"}, nil)
+result, err := client.Validation(nil).Load(nil, nil)
 ```
 
 ### Common Methods

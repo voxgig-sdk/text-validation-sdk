@@ -116,9 +116,9 @@ const validation = client.Validation()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `message` | ``$STRING`` | No |  |
-| `success` | ``$BOOLEAN`` | No |  |
+| `data` | `Record<string, any>` | No |  |
+| `message` | `string` | No |  |
+| `success` | `boolean` | No |  |
 
 ### Operations
 
@@ -127,7 +127,7 @@ const validation = client.Validation()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Validation().load({ id: 'validation_id' })
+const result = await client.Validation().load()
 ```
 
 ### Common Methods

@@ -11,5 +11,9 @@ export interface Validation {
   success?: boolean
 }
 
-export type ValidationLoadMatch = Partial<Validation>
+export interface ValidationLoadMatch {
+  data?: Record<string, any>
+  message?: string
+  success?: boolean
+}
 
