@@ -15,9 +15,9 @@ main: {
           url: "https://abhi-api.vercel.app"
         }
       ]
+      summary: "This API checks if the provided text parameters are valid and not empty."
       title: "Text Validation API"
       version: "1.0.0"
+      website: "https://abhi-api.vercel.app"
     }
   }
-}
-
