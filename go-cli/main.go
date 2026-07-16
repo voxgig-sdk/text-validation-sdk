@@ -27,7 +27,20 @@ func main() {
 }
 
 func run(args []string, in io.Reader, out, errOut io.Writer) int {
-	client := sdk.NewTextValidationSDK(nil)
+	// Configure from the environment: TEXT_VALIDATION_APIKEY carries the API key and
+	// TEXT_VALIDATION_BASE optionally overrides the API base URL (e.g. production).
+	// Both injectable by a secrets vault. Unset -> nil config defaults.
+	var opts map[string]any
+	if apikey := os.Getenv("TEXT_VALIDATION_APIKEY"); apikey != "" {
+		opts = map[string]any{"apikey": apikey}
+	}
+	if base := os.Getenv("TEXT_VALIDATION_BASE"); base != "" {
+		if opts == nil {
+			opts = map[string]any{}
+		}
+		opts["base"] = base
+	}
+	client := sdk.NewTextValidationSDK(opts)
 
 	r, err := eng.NewRegistry()
 	if err != nil {
