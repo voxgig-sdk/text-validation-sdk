@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- TextValidation SDK exists test
 
 local sdk = require("text-validation_sdk")
 
