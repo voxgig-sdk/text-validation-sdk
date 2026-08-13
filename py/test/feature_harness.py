@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import TextValidationControl
-from core.error import TextValidationError
-from core.result import TextValidationResult
-from core.spec import TextValidationSpec
+from textvalidation_sdk.config import make_config
+from textvalidation_sdk.features import _make_feature
+from textvalidation_sdk.core.control import TextValidationControl
+from textvalidation_sdk.core.error import TextValidationError
+from textvalidation_sdk.core.result import TextValidationResult
+from textvalidation_sdk.core.spec import TextValidationSpec
 
 
 # True when this SDK was generated with the named feature.

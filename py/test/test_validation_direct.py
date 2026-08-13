@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from textvalidation_sdk.utility.voxgig_struct import voxgig_struct as vs
 from textvalidation_sdk import TextValidationSDK
-from core import helpers
+from textvalidation_sdk.core import helpers
 from test import runner
 
 
@@ -61,11 +61,11 @@ def _validation_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "TEXTVALIDATION_TEST_VALIDATION_ENTID": {},
-        "TEXTVALIDATION_TEST_LIVE": "FALSE",
+        "TEXT_VALIDATION_TEST_VALIDATION_ENTID": {},
+        "TEXT_VALIDATION_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("TEXTVALIDATION_TEST_LIVE") == "TRUE"
+    live = env.get("TEXT_VALIDATION_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

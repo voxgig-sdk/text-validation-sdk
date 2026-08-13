@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import TextValidationSDK
-from core.error import TextValidationError
-from core.result import TextValidationResult
-from core.response import TextValidationResponse
-from core.spec import TextValidationSpec
-from feature.base_feature import TextValidationBaseFeature
+from projectname_sdk.core.error import TextValidationError
+from projectname_sdk.core.result import TextValidationResult
+from projectname_sdk.core.response import TextValidationResponse
+from projectname_sdk.core.spec import TextValidationSpec
+from projectname_sdk.feature.base_feature import TextValidationBaseFeature
 
 
 def _client():

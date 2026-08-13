@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# TextValidation SDK exists test
 
 import pytest
 from textvalidation_sdk import TextValidationSDK

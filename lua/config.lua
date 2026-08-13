@@ -67,6 +67,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/search/ringtone",
                 ["parts"] = {
@@ -81,7 +82,7 @@ local function make_config()
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.data`",
                 },
                 ["index$"] = 0,
               },

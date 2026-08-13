@@ -26,7 +26,7 @@ class ValidationEntityTest < Minitest::Test
     # The basic flow consumes synthetic IDs from the fixture. In live mode
     # without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup[:synthetic_only]
-      skip "live entity test uses synthetic IDs from fixture — set TEXTVALIDATION_TEST_VALIDATION_ENTID JSON to run live"
+      skip "live entity test uses synthetic IDs from fixture — set TEXT_VALIDATION_TEST_VALIDATION_ENTID JSON to run live"
       return
     end
     client = setup[:client]
@@ -74,22 +74,22 @@ def validation_basic_setup(extra)
   # Detect ENTID env override before envOverride consumes it. When live
   # mode is on without a real override, the basic test runs against synthetic
   # IDs from the fixture and 4xx's. Surface this so the test can skip.
-  entid_env_raw = ENV["TEXTVALIDATION_TEST_VALIDATION_ENTID"]
+  entid_env_raw = ENV["TEXT_VALIDATION_TEST_VALIDATION_ENTID"]
   idmap_overridden = !entid_env_raw.nil? && entid_env_raw.strip.start_with?("{")
 
   env = Runner.env_override({
-    "TEXTVALIDATION_TEST_VALIDATION_ENTID" => idmap,
-    "TEXTVALIDATION_TEST_LIVE" => "FALSE",
-    "TEXTVALIDATION_TEST_EXPLAIN" => "FALSE",
+    "TEXT_VALIDATION_TEST_VALIDATION_ENTID" => idmap,
+    "TEXT_VALIDATION_TEST_LIVE" => "FALSE",
+    "TEXT_VALIDATION_TEST_EXPLAIN" => "FALSE",
   })
 
   idmap_resolved = Helpers.to_map(
-    env["TEXTVALIDATION_TEST_VALIDATION_ENTID"])
+    env["TEXT_VALIDATION_TEST_VALIDATION_ENTID"])
   if idmap_resolved.nil?
     idmap_resolved = Helpers.to_map(idmap)
   end
 
-  if env["TEXTVALIDATION_TEST_LIVE"] == "TRUE"
+  if env["TEXT_VALIDATION_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
       },
@@ -98,13 +98,13 @@ def validation_basic_setup(extra)
     client = TextValidationSDK.new(Helpers.to_map(merged_opts))
   end
 
-  live = env["TEXTVALIDATION_TEST_LIVE"] == "TRUE"
+  live = env["TEXT_VALIDATION_TEST_LIVE"] == "TRUE"
   {
     client: client,
     data: entity_data,
     idmap: idmap_resolved,
     env: env,
-    explain: env["TEXTVALIDATION_TEST_EXPLAIN"] == "TRUE",
+    explain: env["TEXT_VALIDATION_TEST_EXPLAIN"] == "TRUE",
     live: live,
     synthetic_only: live && !idmap_overridden,
     now: (Time.now.to_f * 1000).to_i,

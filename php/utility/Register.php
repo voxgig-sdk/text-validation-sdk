@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ TextValidationUtility::setRegistrar(function (TextValidationUtility $u): void {
     $u->prepare_params = [TextValidationPrepareParams::class, 'call'];
     $u->prepare_path = [TextValidationPreparePath::class, 'call'];
     $u->prepare_query = [TextValidationPrepareQuery::class, 'call'];
+    $u->graphql_body = [TextValidationGraphql::class, 'body'];
+    $u->graphql_errors = [TextValidationGraphql::class, 'errors'];
     $u->result_basic = [TextValidationResultBasic::class, 'call'];
     $u->result_body = [TextValidationResultBody::class, 'call'];
     $u->result_headers = [TextValidationResultHeaders::class, 'call'];

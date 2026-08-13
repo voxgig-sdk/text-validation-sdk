@@ -43,8 +43,8 @@ class TextValidationTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('TEXTVALIDATION_TEST_LIVE');
-        $override = self::getenv('TEXTVALIDATION_TEST_OVERRIDE');
+        $live = self::getenv('TEXT_VALIDATION_TEST_LIVE');
+        $override = self::getenv('TEXT_VALIDATION_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class TextValidationTestRunner
             }
         }
 
-        $explain = self::getenv('TEXTVALIDATION_TEST_EXPLAIN');
+        $explain = self::getenv('TEXT_VALIDATION_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['TEXTVALIDATION_TEST_EXPLAIN'] = $explain;
+            $m['TEXT_VALIDATION_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

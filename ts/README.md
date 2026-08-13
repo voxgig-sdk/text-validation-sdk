@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = TextValidationSDK.test()
 
 const validation = await client.Validation().load()
-// validation is a bare entity populated with mock response data
+// validation is the entity, populated with mock response data
+// — call validation.data() for the record itself
 console.log(validation)
 ```
 

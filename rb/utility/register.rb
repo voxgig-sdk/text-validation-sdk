@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ TextValidationUtility.registrar = ->(u) {
   u.prepare_params = TextValidationUtilities::PrepareParams
   u.prepare_path = TextValidationUtilities::PreparePath
   u.prepare_query = TextValidationUtilities::PrepareQuery
+  u.graphql_body = TextValidationUtilities::GraphqlBody
+  u.graphql_errors = TextValidationUtilities::GraphqlErrors
   u.result_basic = TextValidationUtilities::ResultBasic
   u.result_body = TextValidationUtilities::ResultBody
   u.result_headers = TextValidationUtilities::ResultHeaders

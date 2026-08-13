@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'TextValidation',
   }
 
 
@@ -97,6 +97,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/search/ringtone",
               "parts": [
@@ -111,7 +112,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             }

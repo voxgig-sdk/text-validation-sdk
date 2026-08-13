@@ -23,8 +23,8 @@ module TextValidationTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("TEXTVALIDATION_TEST_LIVE")
-    override = getenv("TEXTVALIDATION_TEST_OVERRIDE")
+    live = getenv("TEXT_VALIDATION_TEST_LIVE")
+    override = getenv("TEXT_VALIDATION_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module TextValidationTestRunner
       end
     end
 
-    explain = getenv("TEXTVALIDATION_TEST_EXPLAIN")
-    m["TEXTVALIDATION_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("TEXT_VALIDATION_TEST_EXPLAIN")
+    m["TEXT_VALIDATION_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

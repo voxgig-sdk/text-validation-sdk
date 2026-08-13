@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = TextValidationSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = TextValidationSDK.test({
+  entity: {
+    validation: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const validation = await client.Validation().load()
-// validation is a bare Validation populated with mock data
+// validation is the Validation entity, populated with mock data
+// — call validation.data() for the record itself
 console.log(validation)
 ```
 
@@ -182,7 +191,7 @@ require_once 'textvalidation_sdk.php';
 $client = new TextValidationSDK();
 
 
-// Load a specific validation (returns the bare record; throws on error)
+// Load a specific validation (returns the ENTITY; call data_get() for the record; throws on error)
 $validation = $client->Validation()->load();
 print_r($validation);
 ```
@@ -210,7 +219,7 @@ require_relative "TextValidation_sdk"
 client = TextValidationSDK.new
 
 
-# Load a specific validation (returns the bare record; raises on error)
+# Load a specific validation (returns the ENTITY; call data_get for the record)
 validation = client.Validation.load()
 puts validation
 ```
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://freepublicapis.com/text-validation-api](https://freepublicapis.com/text-validation-api)
 

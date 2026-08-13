@@ -66,11 +66,11 @@ function validation_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["TEXTVALIDATION_TEST_VALIDATION_ENTID"] = {},
-    ["TEXTVALIDATION_TEST_LIVE"] = "FALSE",
+    ["TEXT_VALIDATION_TEST_VALIDATION_ENTID"] = {},
+    ["TEXT_VALIDATION_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["TEXTVALIDATION_TEST_LIVE"] == "TRUE"
+  local live = env["TEXT_VALIDATION_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

@@ -19,11 +19,15 @@ import {
 describe('ValidationDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when TEXTVALIDATION_TEST_LIVE=TRUE.
-  afterEach(liveDelay('TEXTVALIDATION_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when TEXT_VALIDATION_TEST_LIVE=TRUE.
+  afterEach(liveDelay('TEXT_VALIDATION_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new TextValidationSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -76,17 +80,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'TEXTVALIDATION_TEST_VALIDATION_ENTID': {},
-    'TEXTVALIDATION_TEST_LIVE': 'FALSE',
+    'TEXT_VALIDATION_TEST_VALIDATION_ENTID': {},
+    'TEXT_VALIDATION_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.TEXTVALIDATION_TEST_LIVE
+  const live = 'TRUE' === env.TEXT_VALIDATION_TEST_LIVE
 
   if (live) {
     const client = new TextValidationSDK({
     })
 
-    let idmap: any = env['TEXTVALIDATION_TEST_VALIDATION_ENTID']
+    let idmap: any = env['TEXT_VALIDATION_TEST_VALIDATION_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

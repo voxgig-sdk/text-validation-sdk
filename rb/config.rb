@@ -68,6 +68,7 @@ module TextValidationConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/search/ringtone",
                   "parts" => [
@@ -82,7 +83,7 @@ module TextValidationConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.data`",
                   },
                   "index$" => 0,
                 },

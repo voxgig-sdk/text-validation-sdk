@@ -34,7 +34,7 @@ client = TextValidationSDK.new
 
 ```ruby
 begin
-  # load returns the bare Validation record (raises on error).
+  # load returns the ENTITY — call data_get for the Validation record (raises on error).
   validation = client.Validation.load()
   puts validation
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = TextValidationSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 validation = client.Validation.load()
 puts validation
 ```
@@ -268,7 +269,7 @@ Create an instance: `validation = client.Validation`
 #### Example: Load
 
 ```ruby
-# load returns the bare Validation record (raises on error).
+# load returns the ENTITY — call data_get for the Validation record (raises on error).
 validation = client.Validation.load()
 ```
 
