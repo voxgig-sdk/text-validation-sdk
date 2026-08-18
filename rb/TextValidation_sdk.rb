@@ -28,7 +28,7 @@ class TextValidationSDK
     utility = TextValidationUtility.new
     @_utility = utility
 
-    config = TextValidationConfig.make_config
+    config = TextValidationConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

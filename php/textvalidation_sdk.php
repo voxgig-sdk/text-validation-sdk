@@ -40,7 +40,7 @@ class TextValidationSDK
         $utility = new TextValidationUtility();
         $this->_utility = $utility;
 
-        $config = TextValidationConfig::make_config();
+        $config = TextValidationConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

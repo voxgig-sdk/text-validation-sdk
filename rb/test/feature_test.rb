@@ -15,7 +15,7 @@ require_relative "../TextValidation_sdk"
 module TextValidationFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = TextValidationConfig.make_config["feature"]
+    f = TextValidationConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 
