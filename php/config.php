@@ -33,6 +33,9 @@ class TextValidationConfig
         return [
             "main" => [
                 "name" => "TextValidation",
+                "slug" => "text-validation",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [

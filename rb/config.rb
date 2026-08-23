@@ -19,6 +19,9 @@ module TextValidationConfig
     {
       "main" => {
         "name" => "TextValidation",
+        "slug" => "text-validation",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
