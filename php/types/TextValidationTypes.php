@@ -23,8 +23,6 @@ class Validation
 /** Request payload for Validation#load. */
 class ValidationLoadMatch
 {
-    public ?array $data = null;
-    public ?string $message = null;
-    public ?bool $success = null;
+    public string $text;
 }
 

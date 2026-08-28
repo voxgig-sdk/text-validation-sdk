@@ -12,8 +12,6 @@ export interface Validation {
 }
 
 export interface ValidationLoadMatch {
-  data?: Record<string, any>
-  message?: string
-  success?: boolean
+  text: string
 }
 

@@ -27,18 +27,10 @@ Validation = Struct.new(
 
 # Request payload for Validation#load.
 #
-# @!attribute [rw] data
-#   @return [Hash, nil]
-#
-# @!attribute [rw] message
-#   @return [String, nil]
-#
-# @!attribute [rw] success
-#   @return [Boolean, nil]
+# @!attribute [rw] text
+#   @return [String]
 ValidationLoadMatch = Struct.new(
-  :data,
-  :message,
-  :success,
+  :text,
   keyword_init: true
 )
 

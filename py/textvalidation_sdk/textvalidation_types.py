@@ -22,7 +22,5 @@ class Validation(TypedDict, total=False):
     success: bool
 
 
-class ValidationLoadMatch(TypedDict, total=False):
-    data: dict
-    message: str
-    success: bool
+class ValidationLoadMatch(TypedDict):
+    text: str

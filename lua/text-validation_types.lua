@@ -12,9 +12,7 @@
 ---@field success? boolean
 
 ---@class ValidationLoadMatch
----@field data? table
----@field message? string
----@field success? boolean
+---@field text string
 
 local M = {}
 
