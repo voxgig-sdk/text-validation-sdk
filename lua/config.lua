@@ -66,10 +66,16 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/search/ringtone",
-                ["parts"] = {
-                  "api",
-                  "search",
-                  "ringtone",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "search",
+                  },
+                  {
+                    ["lit"] = "ringtone",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -79,6 +85,11 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.data`",
+                },
+                ["parts"] = {
+                  "api",
+                  "search",
+                  "ringtone",
                 },
               },
             },

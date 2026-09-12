@@ -42,10 +42,16 @@ main: kit: entity: validation: {
           }
           method: "GET"
           orig: "/api/search/ringtone"
-          parts: [
-            "api"
-            "search"
-            "ringtone"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "search"
+            }
+            {
+              lit: "ringtone"
+            }
           ]
           select: {
             exist: [
