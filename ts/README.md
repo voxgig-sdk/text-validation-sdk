@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { TextValidationSDK } from '@voxgig-sdk/text-validation'
+import { TextValidationSDK } from '@voxgig-sdk/text-validation-sdk'
 
 const client = new TextValidationSDK()
 ```
@@ -405,7 +405,7 @@ text-validation/
 Import the SDK from the package root:
 
 ```ts
-import { TextValidationSDK } from '@voxgig-sdk/text-validation'
+import { TextValidationSDK } from '@voxgig-sdk/text-validation-sdk'
 ```
 
 ### Entity state

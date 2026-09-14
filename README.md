@@ -105,7 +105,7 @@ local result, err = client:Validation():load({ text = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/text-validation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/releases) |
+| TypeScript | `@voxgig-sdk/text-validation-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/releases) |
 | Python | `voxgig-sdk-text-validation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/releases) |
 | PHP | `voxgig-sdk/text-validation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/text-validation-sdk/go` | `go get github.com/voxgig-sdk/text-validation-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Validation():load({ text = "example" })
 ### TypeScript
 
 ```ts
-import { TextValidationSDK } from '@voxgig-sdk/text-validation'
+import { TextValidationSDK } from '@voxgig-sdk/text-validation-sdk'
 
 const client = new TextValidationSDK()
 
