@@ -29,5 +29,129 @@
         "success": true
       }
     }
+  },
+  "requests": {
+    "GET /api/search/ringtone": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "validateText",
+        "parameters": [
+          {
+            "description": "The text string to validate. Must not be empty.",
+            "example": "sample text",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "validText": {
+                    "summary": "Valid text provided",
+                    "value": {
+                      "data": {
+                        "text": "sample text"
+                      },
+                      "message": "Text validation successful",
+                      "success": true
+                    }
+                  }
+                },
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "description": "Additional data returned on successful validation",
+                      "type": "object"
+                    },
+                    "message": {
+                      "description": "Success or informational message",
+                      "type": "string"
+                    },
+                    "success": {
+                      "description": "Indicates if the validation was successful",
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful validation response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "emptyText": {
+                    "summary": "Text parameter is empty",
+                    "value": {
+                      "error": "Text parameter cannot be empty",
+                      "message": "Please provide non-empty text",
+                      "success": false
+                    }
+                  },
+                  "missingText": {
+                    "summary": "Text parameter missing",
+                    "value": {
+                      "error": "Text parameter is required",
+                      "message": "Please provide a valid text parameter",
+                      "success": false
+                    }
+                  }
+                },
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message describing the validation failure",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed error message",
+                      "type": "string"
+                    },
+                    "success": {
+                      "description": "Indicates validation failure",
+                      "example": false,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request - text parameter is missing or empty"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    },
+                    "success": {
+                      "example": false,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

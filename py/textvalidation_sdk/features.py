@@ -1,12 +1,18 @@
 # TextValidation SDK feature factory
 
 from textvalidation_sdk.feature.base_feature import TextValidationBaseFeature
+from textvalidation_sdk.feature.ratelimit_feature import TextValidationRatelimitFeature
+from textvalidation_sdk.feature.retry_feature import TextValidationRetryFeature
 from textvalidation_sdk.feature.test_feature import TextValidationTestFeature
+from textvalidation_sdk.feature.timeout_feature import TextValidationTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: TextValidationBaseFeature(),
+    "ratelimit": lambda: TextValidationRatelimitFeature(),
+    "retry": lambda: TextValidationRetryFeature(),
     "test": lambda: TextValidationTestFeature(),
+    "timeout": lambda: TextValidationTimeoutFeature(),
 }
 
 
