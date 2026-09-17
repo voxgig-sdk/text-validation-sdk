@@ -105,12 +105,12 @@ local result, err = client:Validation():load({ text = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/text-validation-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/releases) |
-| Python | `voxgig-sdk-text-validation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/releases) |
-| PHP | `voxgig-sdk/text-validation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/releases) |
+| TypeScript | `@voxgig-sdk/text-validation-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/tags) |
+| Python | `voxgig-sdk-text-validation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/tags) |
+| PHP | `voxgig-sdk/text-validation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/text-validation-sdk/go` | `go get github.com/voxgig-sdk/text-validation-sdk/go@latest` |
-| Ruby | `voxgig-sdk-text-validation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/releases) |
-| Lua | `voxgig-sdk-text-validation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/releases) |
+| Ruby | `voxgig-sdk-text-validation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/tags) |
+| Lua | `voxgig-sdk-text-validation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/text-validation-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/text-validation-sdk/go-cli` | `go install github.com/voxgig-sdk/text-validation-sdk/go-cli/cmd/text-validation@latest` |
 | Go MCP server | `github.com/voxgig-sdk/text-validation-sdk/go-mcp` | `go get github.com/voxgig-sdk/text-validation-sdk/go-mcp@latest` |
 
