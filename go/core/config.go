@@ -91,14 +91,17 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "data",
+						"title": "Data",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "message",
+						"title": "Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "success",
+						"title": "Success",
 						"type": "`$BOOLEAN`",
 					},
 				},
@@ -109,18 +112,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": "sample text",
-											"kind": "query",
-											"name": "text",
-											"orig": "text",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/search/ringtone",
@@ -135,19 +126,32 @@ func MakeConfig() map[string]any {
 										"lit": "ringtone",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"text",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.data`",
-								},
 								"parts": []any{
 									"api",
 									"search",
 									"ringtone",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.data`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "text",
+											"orig": "text",
+											"type": "`$STRING`",
+											"kind": "query",
+											"reqd": true,
+											"example": "sample text",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"text",
+									},
 								},
 							},
 						},

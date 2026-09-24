@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -139,14 +132,17 @@ class Config {
       "fields": [
         {
           "name": "data",
+          "title": "Data",
           "type": "`$OBJECT`"
         },
         {
           "name": "message",
+          "title": "Message",
           "type": "`$STRING`"
         },
         {
           "name": "success",
+          "title": "Success",
           "type": "`$BOOLEAN`"
         }
       ],
@@ -157,18 +153,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "example": "sample text",
-                    "kind": "query",
-                    "name": "text",
-                    "orig": "text",
-                    "reqd": true,
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/api/search/ringtone",
@@ -183,20 +167,33 @@ class Config {
                   "lit": "ringtone"
                 }
               ],
-              "select": {
-                "exist": [
-                  "text"
-                ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body.data`"
-              },
               "parts": [
                 "api",
                 "search",
                 "ringtone"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body.data`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "text",
+                    "orig": "text",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "reqd": true,
+                    "example": "sample text"
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "text"
+                ]
+              }
             }
           ]
         }

@@ -1,0 +1,80 @@
+# Entity: validation
+
+main: kit: entity: validation: {
+
+  alias: field: {}
+
+  fields: {
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      t: "`$OBJECT`"
+    }
+    message: {
+      h: "Message"
+      n: "message"
+      r: false
+      t: "`$STRING`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "validation"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/search/ringtone"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "sample text"
+                k: "query"
+                n: "text"
+                or: "text"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/search/ringtone"
+          q: {
+            exist: [
+              "text"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "search"
+            }
+            {
+              lit: "ringtone"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

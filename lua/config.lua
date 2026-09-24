@@ -87,14 +87,17 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "data",
+            ["title"] = "Data",
             ["type"] = "`$OBJECT`",
           },
           {
             ["name"] = "message",
+            ["title"] = "Message",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "success",
+            ["title"] = "Success",
             ["type"] = "`$BOOLEAN`",
           },
         },
@@ -105,18 +108,6 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["args"] = {
-                  ["query"] = {
-                    {
-                      ["example"] = "sample text",
-                      ["kind"] = "query",
-                      ["name"] = "text",
-                      ["orig"] = "text",
-                      ["reqd"] = true,
-                      ["type"] = "`$STRING`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/search/ringtone",
@@ -131,19 +122,32 @@ local function make_config()
                     ["lit"] = "ringtone",
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "text",
-                  },
-                },
-                ["transform"] = {
-                  ["req"] = "`reqdata`",
-                  ["res"] = "`body.data`",
-                },
                 ["parts"] = {
                   "api",
                   "search",
                   "ringtone",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body.data`",
+                },
+                ["args"] = {
+                  ["query"] = {
+                    {
+                      ["name"] = "text",
+                      ["orig"] = "text",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "sample text",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "text",
+                  },
                 },
               },
             },
