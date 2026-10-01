@@ -98,19 +98,9 @@ module TextValidationConfig
         "validation" => {
           "fields" => [
             {
-              "name" => "data",
-              "title" => "Data",
-              "type" => "`$OBJECT`",
-            },
-            {
-              "name" => "message",
-              "title" => "Message",
+              "name" => "text",
+              "title" => "Text",
               "type" => "`$STRING`",
-            },
-            {
-              "name" => "success",
-              "title" => "Success",
-              "type" => "`$BOOLEAN`",
             },
           ],
           "name" => "validation",

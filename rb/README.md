@@ -12,9 +12,18 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `c
 
 ## Install
 This package is not yet published to RubyGems. Install it from the
-GitHub release tag (`rb/vX.Y.Z`):
+GitHub release tag (`rb/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/text-validation-sdk/releases)), or
+from a clone:
 
-- Releases: [https://github.com/voxgig-sdk/text-validation-sdk/releases](https://github.com/voxgig-sdk/text-validation-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/text-validation-sdk
+```
+
+Then add it to your `Gemfile` by path, and run `bundle install`:
+
+```ruby
+gem "voxgig-sdk-text-validation-sdk", path: "./text-validation-sdk/rb"
+```
 
 
 ## Tutorial: your first API call
@@ -235,9 +244,7 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `message` |  |
-| `success` |  |
+| `text` |  |
 
 Operations: Load.
 
@@ -262,9 +269,7 @@ Create an instance: `validation = client.Validation`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Hash` |  |
-| `message` | `String` |  |
-| `success` | `Boolean` |  |
+| `text` | `String` |  |
 
 #### Example: Load
 

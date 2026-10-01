@@ -241,9 +241,7 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `message` |  |
-| `success` |  |
+| `text` |  |
 
 Operations: Load.
 
@@ -268,9 +266,7 @@ Create an instance: `validation = client.Validation()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `dict` |  |
-| `message` | `str` |  |
-| `success` | `bool` |  |
+| `text` | `str` |  |
 
 #### Example: Load
 

@@ -92,9 +92,7 @@ $validation = $client->Validation();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `array` | No |  |
-| `message` | `string` | No |  |
-| `success` | `bool` | No |  |
+| `text` | `string` | No |  |
 
 ### Operations
 

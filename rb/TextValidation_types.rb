@@ -10,18 +10,10 @@
 
 # Validation entity data model.
 #
-# @!attribute [rw] data
-#   @return [Hash, nil]
-#
-# @!attribute [rw] message
+# @!attribute [rw] text
 #   @return [String, nil]
-#
-# @!attribute [rw] success
-#   @return [Boolean, nil]
 Validation = Struct.new(
-  :data,
-  :message,
-  :success,
+  :text,
   keyword_init: true
 )
 

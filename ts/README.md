@@ -15,9 +15,13 @@ predictable and low-friction for both humans and AI agents.
 
 ## Install
 This package is not yet published to npm. Install it from the GitHub
-release tag (`ts/vX.Y.Z`):
+release tag (`ts/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/text-validation-sdk/releases)), or from a
+clone, which carries the compiled `dist/`:
 
-- Releases: [https://github.com/voxgig-sdk/text-validation-sdk/releases](https://github.com/voxgig-sdk/text-validation-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/text-validation-sdk
+npm install ./text-validation-sdk/ts
+```
 
 
 ## Tutorial: your first API call
@@ -290,9 +294,7 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `message` |  |
-| `success` |  |
+| `text` |  |
 
 Operations: load.
 
@@ -317,9 +319,7 @@ Create an instance: `const validation = client.Validation()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Record<string, any>` |  |
-| `message` | `string` |  |
-| `success` | `boolean` |  |
+| `text` | `string` |  |
 
 #### Example: Load
 

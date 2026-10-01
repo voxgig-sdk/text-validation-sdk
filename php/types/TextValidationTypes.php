@@ -15,9 +15,7 @@ declare(strict_types=1);
 /** Validation entity data model. */
 class Validation
 {
-    public ?array $data = null;
-    public ?string $message = null;
-    public ?bool $success = null;
+    public ?string $text = null;
 }
 
 /** Request payload for Validation#load. */

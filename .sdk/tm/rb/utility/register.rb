@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 TextValidationUtility.registrar = ->(u) {
   u.clean = TextValidationUtilities::Clean
+  u.clean_add = TextValidationUtilities::CleanAdd
+  u.clean_explain = TextValidationUtilities::CleanExplain
   u.done = TextValidationUtilities::Done
   u.make_error = TextValidationUtilities::MakeError
   u.feature_add = TextValidationUtilities::FeatureAdd

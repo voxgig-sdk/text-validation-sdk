@@ -12,9 +12,14 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `$
 
 ## Install
 This package is not yet published to Packagist. Install it from the
-GitHub release tag (`php/vX.Y.Z`):
+GitHub release tag (`php/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/text-validation-sdk/releases)), or
+from a clone as a Composer path repository:
 
-- Releases: [https://github.com/voxgig-sdk/text-validation-sdk/releases](https://github.com/voxgig-sdk/text-validation-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/text-validation-sdk
+composer config repositories.text-validation-sdk path ./text-validation-sdk/php
+composer require voxgig-sdk/text-validation-sdk:@dev
+```
 
 
 ## Tutorial: your first API call
@@ -245,9 +250,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `message` |  |
-| `success` |  |
+| `text` |  |
 
 Operations: Load.
 
@@ -272,9 +275,7 @@ Create an instance: `$validation = $client->Validation();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `array` |  |
-| `message` | `string` |  |
-| `success` | `bool` |  |
+| `text` | `string` |  |
 
 #### Example: Load
 

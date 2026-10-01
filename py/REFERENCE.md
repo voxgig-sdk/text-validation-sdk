@@ -87,9 +87,7 @@ validation = client.Validation()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `dict` | No |  |
-| `message` | `str` | No |  |
-| `success` | `bool` | No |  |
+| `text` | `str` | No |  |
 
 ### Operations
 

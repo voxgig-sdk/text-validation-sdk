@@ -18,12 +18,6 @@ Results: Successful validation response.
 
 SDK operations: `load`.
 
-Key fields to recognise:
-
-- `data`: Additional data returned on successful validation
-- `message`: Success or informational message
-- `success`: Indicates if the validation was successful
-
 ### Route map
 
 Use this map to locate a capability. Consult the entity reference before supplying request data; routes for the same operation can require different fields.

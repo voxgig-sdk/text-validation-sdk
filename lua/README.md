@@ -225,9 +225,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `message` |  |
-| `success` |  |
+| `text` |  |
 
 Operations: Load.
 
@@ -252,9 +250,7 @@ Create an instance: `local validation = client:Validation(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `table` |  |
-| `message` | `string` |  |
-| `success` | `boolean` |  |
+| `text` | `string` |  |
 
 #### Example: Load
 

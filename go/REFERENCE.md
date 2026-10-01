@@ -98,9 +98,7 @@ fmt.Println(validation.GetName()) // "validation"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `map[string]any` | No |  |
-| `message` | `string` | No |  |
-| `success` | `bool` | No |  |
+| `text` | `string` | No |  |
 
 ### Operations
 

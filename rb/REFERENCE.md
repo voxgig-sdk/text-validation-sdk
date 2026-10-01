@@ -93,9 +93,7 @@ validation = client.Validation
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Hash` | No |  |
-| `message` | `String` | No |  |
-| `success` | `Boolean` | No |  |
+| `text` | `String` | No |  |
 
 ### Operations
 

@@ -116,9 +116,7 @@ const validation = client.Validation()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Record<string, any>` | No |  |
-| `message` | `string` | No |  |
-| `success` | `boolean` | No |  |
+| `text` | `string` | No |  |
 
 ### Operations
 

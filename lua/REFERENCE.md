@@ -90,9 +90,7 @@ local validation = client:Validation(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `table` | No |  |
-| `message` | `string` | No |  |
-| `success` | `boolean` | No |  |
+| `text` | `string` | No |  |
 
 ### Operations
 

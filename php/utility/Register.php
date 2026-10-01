@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 TextValidationUtility::setRegistrar(function (TextValidationUtility $u): void {
     $u->clean = [TextValidationClean::class, 'call'];
+    $u->clean_add = [TextValidationClean::class, 'add'];
+    $u->clean_explain = [TextValidationDone::class, 'clean_explain'];
     $u->done = [TextValidationDone::class, 'call'];
     $u->make_error = [TextValidationMakeError::class, 'call'];
     $u->feature_add = [TextValidationFeatureAdd::class, 'call'];

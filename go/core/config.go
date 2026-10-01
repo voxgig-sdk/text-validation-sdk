@@ -90,19 +90,9 @@ func MakeConfig() map[string]any {
 			"validation": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"name": "data",
-						"title": "Data",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "message",
-						"title": "Message",
+						"name": "text",
+						"title": "Text",
 						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "success",
-						"title": "Success",
-						"type": "`$BOOLEAN`",
 					},
 				},
 				"name": "validation",

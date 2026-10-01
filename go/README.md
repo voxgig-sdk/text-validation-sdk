@@ -258,9 +258,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"data"` |  |
-| `"message"` |  |
-| `"success"` |  |
+| `"text"` |  |
 
 Operations: Load.
 
@@ -285,9 +283,7 @@ Create an instance: `validation := client.Validation(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `map[string]any` |  |
-| `message` | `string` |  |
-| `success` | `bool` |  |
+| `text` | `string` |  |
 
 #### Example: Load
 

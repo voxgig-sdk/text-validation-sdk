@@ -7,9 +7,7 @@
 -- edit by hand.
 
 ---@class Validation
----@field data? table
----@field message? string
----@field success? boolean
+---@field text? string
 
 ---@class ValidationLoadMatch
 ---@field text string

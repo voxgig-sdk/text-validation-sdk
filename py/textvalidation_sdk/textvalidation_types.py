@@ -17,9 +17,7 @@ from typing import TypedDict, Any
 
 
 class Validation(TypedDict, total=False):
-    data: dict
-    message: str
-    success: bool
+    text: str
 
 
 class ValidationLoadMatch(TypedDict):

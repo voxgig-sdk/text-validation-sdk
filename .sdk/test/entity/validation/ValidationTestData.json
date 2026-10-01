@@ -2,21 +2,15 @@
   "existing": {
     "validation": {
       "VALIDATION00": {
-        "data": {},
-        "message": "s1f",
-        "success": true,
+        "text": "sa",
         "id": "VALIDATION00"
       },
       "VALIDATION01": {
-        "data": {},
-        "message": "s3d",
-        "success": true,
+        "text": "s14",
         "id": "VALIDATION01"
       },
       "VALIDATION02": {
-        "data": {},
-        "message": "s5b",
-        "success": true,
+        "text": "s1e",
         "id": "VALIDATION02"
       }
     }
@@ -24,9 +18,7 @@
   "new": {
     "validation": {
       "validation_ref01": {
-        "data": {},
-        "message": "s79",
-        "success": true
+        "text": "s28"
       }
     }
   },

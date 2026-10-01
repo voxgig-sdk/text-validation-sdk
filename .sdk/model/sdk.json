@@ -97,26 +97,12 @@
             "field": {}
           },
           "fields": {
-            "data": {
+            "text": {
               "a": true,
-              "h": "Data",
-              "n": "data",
-              "r": false,
-              "t": "`$OBJECT`"
-            },
-            "message": {
-              "a": true,
-              "h": "Message",
-              "n": "message",
+              "h": "Text",
+              "n": "text",
               "r": false,
               "t": "`$STRING`"
-            },
-            "success": {
-              "a": true,
-              "h": "Success",
-              "n": "success",
-              "r": false,
-              "t": "`$BOOLEAN`"
             }
           },
           "name": "validation",
@@ -653,7 +639,12 @@
         },
         "base": "http://localhost:8000",
         "clean": {
-          "keys": "key,token,id"
+          "active": true,
+          "hint": "0",
+          "keys": "key,secret,token,password,passwd,authorization,cookie,credential,signature",
+          "mask": "[redacted]",
+          "min": "4",
+          "values": ""
         },
         "entity": {
           "`$CHILD`": {
