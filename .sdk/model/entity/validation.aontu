@@ -43,6 +43,10 @@ main: kit: entity: validation: {
               "text"
             ]
           }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "api"

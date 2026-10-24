@@ -67,6 +67,7 @@ local function make_config()
         },
         ["optspec"] = {
           ["clearTimer"] = "`$FUNCTION`",
+          ["now"] = "`$FUNCTION`",
           ["setTimer"] = "`$FUNCTION`",
         },
         ["strict"] = false,
@@ -131,6 +132,7 @@ local function make_config()
                       ["kind"] = "query",
                       ["reqd"] = true,
                       ["example"] = "sample text",
+                      ["field"] = true,
                     },
                   },
                 },
@@ -138,6 +140,10 @@ local function make_config()
                   ["exist"] = {
                     "text",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },

@@ -93,6 +93,7 @@ class TextValidationConfig
           ],
           'optspec' => [
             'clearTimer' => '`$FUNCTION`',
+            'now' => '`$FUNCTION`',
             'setTimer' => '`$FUNCTION`',
           ],
           'strict' => false,
@@ -157,6 +158,7 @@ class TextValidationConfig
                         'kind' => 'query',
                         'reqd' => true,
                         'example' => 'sample text',
+                        'field' => true,
                       ],
                     ],
                   ],
@@ -164,6 +166,10 @@ class TextValidationConfig
                     'exist' => [
                       'text',
                     ],
+                  ],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],

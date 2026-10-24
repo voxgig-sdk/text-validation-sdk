@@ -79,6 +79,7 @@ module TextValidationConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -143,6 +144,7 @@ module TextValidationConfig
                         "kind" => "query",
                         "reqd" => true,
                         "example" => "sample text",
+                        "field" => true,
                       },
                     ],
                   },
@@ -150,6 +152,10 @@ module TextValidationConfig
                     "exist" => [
                       "text",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],

@@ -3,5 +3,12 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Production server",
+      "Successful validation response",
+      "This API checks if the provided text parameters are valid and not empty. It returns an error message if the text is missing, ensuring that users provide necessary input."
+    ]
+  }
 }

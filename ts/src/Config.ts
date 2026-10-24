@@ -102,6 +102,7 @@ class Config {
       },
       "optspec": {
         "clearTimer": "`$FUNCTION`",
+        "now": "`$FUNCTION`",
         "setTimer": "`$FUNCTION`"
       },
       "strict": false,
@@ -175,7 +176,8 @@ class Config {
                     "type": "`$STRING`",
                     "kind": "query",
                     "reqd": true,
-                    "example": "sample text"
+                    "example": "sample text",
+                    "field": true
                   }
                 ]
               },
@@ -183,6 +185,10 @@ class Config {
                 "exist": [
                   "text"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
